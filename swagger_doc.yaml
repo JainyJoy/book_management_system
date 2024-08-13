@@ -1,0 +1,713 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "FastAPI",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/books": {
+      "get": {
+        "tags": [
+          "Register Book"
+        ],
+        "summary": "Create Config",
+        "operationId": "create_config_books_get",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            },
+            "name": "book_id",
+            "in": "query"
+          },
+          {
+            "description": "Bearer \u003Cyour_jwt_token\u003E",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Bearer \u003Cyour_jwt_token\u003E"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Register Book"
+        ],
+        "summary": "Create Book",
+        "operationId": "create_book_books_post",
+        "parameters": [
+          {
+            "description": "Bearer \u003Cyour_jwt_token\u003E",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Bearer \u003Cyour_jwt_token\u003E"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookCreationPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/books/{book_id}": {
+      "get": {
+        "tags": [
+          "Register Book"
+        ],
+        "summary": "Create Config",
+        "operationId": "create_config_books__book_id__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            },
+            "name": "book_id",
+            "in": "path"
+          },
+          {
+            "description": "Bearer \u003Cyour_jwt_token\u003E",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Bearer \u003Cyour_jwt_token\u003E"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Register Book"
+        ],
+        "summary": "Update Book",
+        "operationId": "update_book_books__book_id__put",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            },
+            "name": "book_id",
+            "in": "path"
+          },
+          {
+            "description": "Bearer \u003Cyour_jwt_token\u003E",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Bearer \u003Cyour_jwt_token\u003E"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookUpdatePayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Register Book"
+        ],
+        "summary": "Delete Book",
+        "operationId": "delete_book_books__book_id__delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            },
+            "name": "book_id",
+            "in": "path"
+          },
+          {
+            "description": "Bearer \u003Cyour_jwt_token\u003E",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Bearer \u003Cyour_jwt_token\u003E"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Get",
+        "operationId": "get_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Register Users",
+        "operationId": "register_users_register_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "User Login",
+        "operationId": "user_login_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/books/{book_id}/reviews": {
+      "get": {
+        "tags": [
+          "Book Review"
+        ],
+        "summary": "Get Book Review",
+        "operationId": "get_book_review_books__book_id__reviews_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            },
+            "name": "book_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Book Review"
+        ],
+        "summary": "Post",
+        "operationId": "post_books__book_id__reviews_post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            },
+            "name": "book_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewCreationPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/books/{book_id}/summary": {
+      "get": {
+        "tags": [
+          "Book Summary"
+        ],
+        "summary": "Get Book Summary",
+        "operationId": "get_book_summary_books__book_id__summary_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            },
+            "name": "book_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BookCreationPayload": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 400,
+            "title": "Title"
+          },
+          "author": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Author"
+          },
+          "genre": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Genre"
+          },
+          "year_published": {
+            "type": "integer",
+            "title": "Year Published"
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 10000,
+            "title": "Summary"
+          }
+        },
+        "type": "object",
+        "required": [
+          "title",
+          "author",
+          "genre",
+          "year_published",
+          "summary"
+        ],
+        "title": "BookCreationPayload"
+      },
+      "BookUpdatePayload": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 400,
+            "title": "Title"
+          },
+          "author": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Author"
+          },
+          "genre": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Genre"
+          },
+          "year_published": {
+            "type": "integer",
+            "title": "Year Published"
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 10000,
+            "title": "Summary"
+          }
+        },
+        "type": "object",
+        "title": "BookUpdatePayload"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "LoginPayload": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "maxLength": 50,
+            "title": "Email"
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "Password"
+          }
+        },
+        "type": "object",
+        "required": [
+          "email",
+          "password"
+        ],
+        "title": "LoginPayload"
+      },
+      "RegistrationPayload": {
+        "properties": {
+          "first_name": {
+            "type": "string",
+            "maxLength": 50,
+            "title": "First Name"
+          },
+          "middle_name": {
+            "type": "string",
+            "maxLength": 50,
+            "title": "Middle Name"
+          },
+          "last_name": {
+            "type": "string",
+            "maxLength": 50,
+            "title": "Last Name"
+          },
+          "email": {
+            "type": "string",
+            "maxLength": 50,
+            "title": "Email"
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "Password"
+          }
+        },
+        "type": "object",
+        "required": [
+          "first_name",
+          "email",
+          "password"
+        ],
+        "title": "RegistrationPayload"
+      },
+      "ReviewCreationPayload": {
+        "properties": {
+          "user_id": {
+            "type": "integer",
+            "title": "User Id"
+          },
+          "review_text": {
+            "type": "string",
+            "maxLength": 10000,
+            "title": "Review Text"
+          },
+          "rating": {
+            "type": "integer",
+            "title": "Rating"
+          }
+        },
+        "type": "object",
+        "required": [
+          "user_id",
+          "review_text",
+          "rating"
+        ],
+        "title": "ReviewCreationPayload"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
